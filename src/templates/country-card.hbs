@@ -1,17 +1,31 @@
-{{!-- <h2 class="country__name">Имя: {{name}}</h2>
-<img src="{{flags}}" alt="{{name}}">
-<div class="country__name-title">
-  <Ul class="country__name-title-list">
+
+<h2 class="country__name">{{name}}</h2>
+<div class="country">
+
+ 
+  <ul class="country__name-title-list">
       
 <li class="country__name-title-list-capital">{{capital}}</li>
 <li class="country__name-title-list-population">{{population}}</li>
-<li class="country__name-title-list-languages">{{languages}}</li>
-<li class="country__name-title-list-timezones">{{timezones}}</li>
-{{/each}}
-  </Ul>
-</div>
 
- --}}
+  {{#each languages}}
+      <li class="list-group-item">{{this.name}}</li>
+    {{/each}}
+
+  </ul>
+
+  <img class="flag-png" src="{{flags.png}}" alt="{{name}}">
+
+
+</div> 
+
+
+
+
+
+
+
+
 
 
 

@@ -1,37 +1,49 @@
-import debounce from 'lodash.debounce';
+ import debounce from 'lodash.debounce';
 
 import '@pnotify/core/dist/PNotify.css';
 import '@pnotify/core/dist/BrightTheme.css';
-import { error, notice, defaultModules } from '@pnotify/core';
-defaultModules.set(PNotifyMobile, {});
-
-import refs from './refs';
-// var  debounce  = require ( ' lodash.debounce ' ) ;
-
-//const countriContainer = document.getElementById('')
-const {search, countriesMarcup} = refs
-// import debounce from 'lodash.debounce';
-//import {alert, error, notice, defaultModules } from '@pnotify/core';
-
-// import '@pnotify/core/dist/PNotify.js'
-// import '@pnotify/core/dist/PNotify.css';
-// import '@pnotify/core/dist/BrightTheme.css';
-
-console.log(`12345`)
+ import { error, notice } from '@pnotify/core';
 
 
-//const baseUrl = `https://restcountries.com/v2/name/{name}`;
-//const apiKey = ``
-// console.dir(lodash.debounce)
-// console.log(debounce)
+import refs from './refs' ;
+import SerchCountries from './fetchCountries';
 
-// debounce
-//  .get(url)
-// .then(result => {
-//     console.log(result)
-//     return result.data
-// })
-// .then(data => {
-//     console.log(data)
-// })
-// .catch(err => console.log(err))
+const serchCountries = new SerchCountries;
+
+import countryCardTpl from '../templates/country-card.hbs';
+import serchCountriesTpl from '../templates/country.hbs';
+
+//  defaultModules.set(PNotifyMobile, {});
+  
+// const { countryConteiner, serchCountries }  = refs;
+
+//  const { countryConteiner, serchCountries }  = refs;
+//   serchCountries.addEventListener('input', debounce(onSearhe, 500))
+  
+
+//==========
+
+  function onSearhe(e) { 
+      e.preventDefault();
+const form = e.currentTarget;
+const searchQuery = form.elements.query.value;
+e.preventDefault();
+
+fetchCountries(searchQuery)
+.then(renderCountryCard)
+.catch(error => console.log(error))
+.finally(() => form.reset());
+}
+
+
+function fetchCountries(countries) {
+  const markup = countryCardTpl(countries);
+  countryConteiner.innerHTML = markup;   
+}
+
+
+// serchCountries.innerHTML = '';  
+
+
+
+

@@ -1,6 +1,7 @@
 export default {
- search: document.querySelector('country-input'),
- countriesMarcup: document.querySelector('country-conteiner'),
+    
+countryConteiner: document.querySelector('country-conteiner'),
+serchCountries: document.querySelector('country-input'),
 }
 
 
