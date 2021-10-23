@@ -1,7 +1,7 @@
 export default {
     
-countryConteiner: document.querySelector('country-conteiner'),
-serchCountries: document.querySelector('country-input'),
+countryConteiner: document.querySelector('.country-conteiner'),
+inputSerch: document.querySelector('.country-input'),
 }
 
 

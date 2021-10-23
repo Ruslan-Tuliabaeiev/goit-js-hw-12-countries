@@ -18,10 +18,35 @@
   border-radius: 2px;
 }
 
-.example .background {
-  height: 240px;
+
+.body{
+
+
+background-color: orange;
+  // height: 240px;
+  // // Путь к изображениям из SASS-файла всегда такой, как из папки css
+  // background-image: ('../images/demo.jpg');
+  // background-size: cover;
+  // background-position: center;
+}
+.title-countries {
+
+  margin-top: 40%;
+ margin-left: 30%;
+  height: 30px;
   // Путь к изображениям из SASS-файла всегда такой, как из папки css
-  background-image: url('../images/demo.jpg');
+  background-image: ('../images/demo.jpg');
   background-size: cover;
   background-position: center;
 }
+.country-input {
+  margin-top: 10%;
+  margin-left: 30%;
+}
+
+.country-conteiner {
+  margin-top: 10%;
+  margin-left: 30%;
+
+}
+// .example .backgroundurl
